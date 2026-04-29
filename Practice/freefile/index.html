@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- <h1> Image </h1> -->
+    <!-- <img src="https://i.ibb.co/pv2LWWXm/m-kv-1.webp"> -->
+
+    <form>
+        <fieldset>
+            <legend> Student Info </legend>
+            <label for="fullname"> Enter your name: </label>
+            <input type="text" name="fullname" id="fullname" value="">
+
+            <label for="age"> Age: </label>
+            <input type="number" name="age" id="age" value="">
+
+            <label for="gender">Gender: </label>
+            <input type="radio" name="gender" id="male" value="male"> <span>Male</span>
+            <input type="radio" name="gender" id="female" value="female"> <span>Female</span>
+            <input type="radio" name="gender" id="other" value="other"> <span>Other</span>
+
+            <label for="semester"> Semester: </label>
+            <select name="semester" id="semester">
+                <option value="1">Sem 1</option>
+                <option value="2">Sem 2</option>
+                <option value="3">Sem 3</option>
+                <option value="4">Sem 4</option>
+            </select>
+
+            <label for="fruits"> Fruits </label>
+            <select name="fruits" id="fruits">
+                <optgroup label="berries">
+                    <option value="blue berries">BB</option>
+                    <option value="cran berries">BB</option>
+                </optgroup>
+                
+                <optgroup label="sessional">
+                    <option value="blue berries">BB</option>
+                    <option value="cran berries">BB</option>
+                </optgroup>
+            </select>
+
+            <label for="address"> Address </label>
+            <textarea name="address" id="address" cols="10" rows="1"></textarea>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
+<!-- <script src="script.js"> </script> -->

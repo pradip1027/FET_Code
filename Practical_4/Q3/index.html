@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q3: Logic Challenges</title>
+    <style>
+        .challenge {
+            border: 1px dashed #444;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Question 3: Logic Challenges & Diverse Events</h1>
+
+    <!-- 1. Swap (Event: Click & DblClick) -->
+    <div class="challenge">
+        <h3>1. Swap Values (Click for temp swap, DblClick for destructuring)</h3>
+        X: <input type="number" id="x" value="10">
+        Y: <input type="number" id="y" value="20">
+        <button type="button" id="swapBtn">Swap</button>
+        <p id="swapRes" class="result"></p>
+    </div>
+
+    <!-- 2. Reverse (Event: onchange) -->
+    <div class="challenge">
+        <h3>2. Reverse 5-digit Number (Event: OnChange)</h3>
+        Enter 5-digit number: <input type="number" id="revInput">
+        <p id="revRes" class="result"></p>
+    </div>
+
+    <!-- 3. Armstrong & Palindrome (Event: focus) -->
+    <div class="challenge">
+        <h3>3. Armstrong & Palindrome (Event: Focus on result field)</h3>
+        Number: <input type="number" id="logicInput" value="153">
+        Check: <input type="text" id="logicCheckField" placeholder="Click here to check">
+        <p id="logicRes" class="result"></p>
+    </div>
+
+    <!-- 4. Merge Arrays (Event: click) -->
+    <div class="challenge">
+        <h3>4. Merge Arrays</h3>
+        Arr 1: <input type="text" id="arr1" value="1, 2, 3">
+        Arr 2: <input type="text" id="arr2" value="4, 5, 6">
+        <button type="button" id="mergeBtn">Merge</button>
+        <p id="mergeRes" class="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<div class="product-info">
+  <h2>Product Information</h2>
+  <div class="products">
+    <div *ngFor="let product of products(); let i = index" class="product">
+      <h3>Product {{ i + 1 }}</h3>
+      <div class="input-group">
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="product.name" />
+      </div>
+      <div class="input-group">
+        <label>Price:</label>
+        <input type="number" [(ngModel)]="product.price" />
+      </div>
+      <div class="input-group">
+        <label>Description:</label>
+        <textarea [(ngModel)]="product.description"></textarea>
+      </div>
+    </div>
+  </div>
+  <button (click)="displayProducts()">Display Products</button>
+
+  <div *ngIf="displayedProducts().length > 0" class="displayed-products">
+    <h3>Product List:</h3>
+    <div *ngFor="let product of displayedProducts()" class="product-card">
+      <h4>{{ product.name }}</h4>
+      <p><strong>Price:</strong> ${{ product.price }}</p>
+      <p><strong>Description:</strong> {{ product.description }}</p>
+    </div>
+  </div>
+</div>

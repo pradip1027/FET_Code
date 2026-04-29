@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q1: Arithmetic Operations</title>
+</head>
+
+<body>
+    <h1>Question 1: Arithmetic Operations</h1>
+
+    <h3>1. Direct Initialization (Check Console)</h3>
+    <p>Finding results for fixed values x=30, y=10.</p>
+
+    <hr>
+
+    <h3>2. Indirect Initialization & Switch Case</h3>
+    <form name="calcForm">
+        Number 1: <input type="number" name="num1" value="25"><br><br>
+        Number 2: <input type="number" name="num2" value="5"><br><br>
+        Operation:
+        <select name="operation">
+            <option value="add">Addition (+)</option>
+            <option value="sub">Subtraction (-)</option>
+            <option value="mul">Multiplication (*)</option>
+            <option value="div">Division (/)</option>
+        </select><br><br>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+
+    <h3 id="result-display">Result: </h3>
+    <script src="script.js"></script>
+</body>
+
+</html>

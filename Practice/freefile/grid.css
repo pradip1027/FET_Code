@@ -1,0 +1,28 @@
+#parent{
+    display: grid;
+    background-color: lightslategray;
+  /*  grid-template-rows: repeat(3, 100px);
+    grid-template-columns: 100px 200px 300px;*/
+    grid-template-rows: 100px 200px;
+    grid-template-columns: 200px 300px 200px 300px;
+    column-gap: 10px;
+    row-gap: 5px;
+    justify-content: center;
+    align-content: center;
+    padding: 100px;
+    /* grid-row-gap: 100px;
+    grid-column-gap: 100px; */
+    gap: 100px 100px;
+}
+
+.child{
+    border: 2px solid black;
+    background-color: orange;
+}
+
+#E{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}

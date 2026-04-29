@@ -1,0 +1,23 @@
+<div class="home-container">
+  <div class="home-header">
+    <h1>Explore Our Courses</h1>
+    <p>Discover top-tier educational content designed to elevate your skills.</p>
+  </div>
+
+  <div class="product-grid">
+    @for (product of products; track product.id) {
+      <div class="product-card">
+        <img [src]="product.image" [alt]="product.name" class="product-image">
+        <div class="product-info">
+          <h3>{{product.name}}</h3>
+          <p class="product-desc">{{product.desc}}</p>
+          <div class="product-footer">
+            <span class="product-price">{{product.price}}</span>
+            <!-- Hyperlink on card via routerLink -->
+            <a [routerLink]="['/product', product.id]" class="btn-view">View Details</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

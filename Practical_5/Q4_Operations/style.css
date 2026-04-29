@@ -1,0 +1,39 @@
+body {
+    font-family: Tahoma, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.section {
+    border: 1px solid #777;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #333;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: blue;
+}

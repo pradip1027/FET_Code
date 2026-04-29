@@ -1,0 +1,60 @@
+<!-- ✅ PRACTICAL 3 Store 10 Numbers in Array → Search Element & Display Index 🎯
+Aim: To accept 10 numbers in array and search a number entered by user. ✅
+Steps: Create file: practical3.html Html Copy code -->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Search in Array</title>
+  </head>
+  <body>
+    <script>
+      let arr = [];
+
+      for (let i = 0; i < 10; i++) {
+        let num = parseInt(prompt("Enter number " + (i + 1)));
+        arr.push(num);
+      }
+
+      let search = parseInt(prompt("Enter number to search:"));
+
+      let found = false;
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === search) {
+          document.write("Number Found: " + search + "<br>");
+          document.write("Index Position: " + i);
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
+        document.write("Number not found in array");
+      }
+    </script>
+  </body>
+</html>
+<!-- 🎓 Viva Questions
+Q1: What is array?
+👉 Collection of similar data stored in single variable.
+Q2: What is index?
+👉 Position of element starting from 0.
+Q3: What is break statement?
+👉 Stops loop execution.
+🔥 VERY IMPORTANT VIVA TRICKY QUESTIONS
+Q: Difference between for, for…in and for…of?
+for → normal loop
+for…in → index loop
+for…of → value loop
+Q: What is === ?
+👉 Strict equality (checks value + datatype)
+Q: What is event?
+👉 Action performed by user like click, submit.
+🎯 FINAL EXAM TIP
+If sir says:
+“Write code without looking” →
+Remember 3 things:
+Loop
+Function
+DOM method -->

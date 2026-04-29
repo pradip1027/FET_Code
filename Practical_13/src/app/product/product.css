@@ -1,0 +1,20 @@
+.product-detail-container { max-width: 1000px; margin: 0 auto; }
+.breadcrumb { margin-bottom: 2rem; }
+.breadcrumb a { color: #4f46e5; text-decoration: none; font-weight: 500; }
+.breadcrumb a:hover { text-decoration: underline; }
+.product-hero { margin-bottom: 2.5rem; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+.hero-image { width: 100%; height: 400px; object-fit: cover; display: block; }
+.product-body { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
+.main-info h1 { font-size: 2.5rem; color: #111827; margin-bottom: 1rem; }
+.tagline { font-size: 1.25rem; color: #4b5563; margin-bottom: 2.5rem; line-height: 1.6; }
+.details-section h2 { font-size: 1.5rem; color: #1f2937; margin-bottom: 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+.details-section p { color: #4b5563; line-height: 1.7; font-size: 1.05rem; }
+.enroll-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; position: sticky; top: 100px; }
+.price { display: block; font-size: 2.5rem; font-weight: 800; color: #111827; margin-bottom: 1.5rem; }
+.btn-enroll { width: 100%; background: #4f46e5; color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-bottom: 1.5rem; }
+.btn-enroll:hover { background: #4338ca; }
+.features { list-style: none; color: #4b5563; }
+.features li { margin-bottom: 0.75rem; font-size: 0.95rem; }
+.not-found-msg { text-align: center; padding: 4rem; background: white; border-radius: 12px; }
+.not-found-msg h2 { color: #ef4444; margin-bottom: 1rem; }
+@media(max-width: 768px) { .product-body { grid-template-columns: 1fr; } .hero-image { height: 250px; } }

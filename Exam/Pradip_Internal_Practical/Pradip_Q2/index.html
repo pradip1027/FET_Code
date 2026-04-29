@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Addition & Average</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+
+      for (let i = 0; i < 10; i++) {
+        let num = parseInt(prompt("Enter number " + (i + 1)));
+        numbers.push(num);
+      }
+
+      function calculateSum(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      }
+
+      let total = calculateSum(numbers);
+      let avg = total / 10;
+
+      document.write("Named Function: " + total + "<br>");
+
+      let arrowSum = (arr) => {
+        let summ = 0;
+        for (let i of arr) {
+          summ += i;
+        }
+        return summ;
+      };
+
+      document.write("Arrow Function: " + arrowSum(numbers) + "<br>");
+
+      let anon = function (arr) {
+        let s = 0;
+        for (let i of arr) {
+          s += i;
+        }
+        return s;
+      };
+
+      document.write("Anonymous Function: " + anon(numbers) + "<br>");
+
+      document.write("Average: " + avg + "<br>");
+    </script>
+  </body>
+</html>

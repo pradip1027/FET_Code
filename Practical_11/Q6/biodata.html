@@ -1,0 +1,87 @@
+<div class="biodata-form">
+  <h2>Biodata Application Form</h2>
+
+  <form (ngSubmit)="submitBiodata()">
+    <!-- Personal Information -->
+    <section class="section">
+      <h3>Personal Information</h3>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="biodata().personal.name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="fatherName">Father's Name:</label>
+        <input type="text" id="fatherName" [(ngModel)]="biodata().personal.fatherName" name="fatherName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" [(ngModel)]="biodata().personal.address" name="address" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" [(ngModel)]="biodata().personal.contactNumber" name="contact" required />
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image URL:</label>
+        <input type="url" id="image" [(ngModel)]="biodata().personal.image" name="image" placeholder="Enter image URL" />
+        <div *ngIf="biodata().personal.image" class="image-preview">
+          <img [src]="biodata().personal.image" alt="Profile Image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Educational Information -->
+    <section class="section">
+      <h3>Educational Information</h3>
+
+      <div class="form-group">
+        <label for="ssc">SSC:</label>
+        <input type="text" id="ssc" [(ngModel)]="biodata().educational.ssc" name="ssc" required />
+      </div>
+
+      <div class="form-group">
+        <label for="hsc">HSC:</label>
+        <input type="text" id="hsc" [(ngModel)]="biodata().educational.hsc" name="hsc" required />
+      </div>
+
+      <div class="form-group">
+        <label for="graduation">Graduation:</label>
+        <input type="text" id="graduation" [(ngModel)]="biodata().educational.graduation" name="graduation" required />
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h3>Skill Set</h3>
+      <div class="skills">
+        <label *ngFor="let skill of skillOptions" class="skill-checkbox">
+          <input type="checkbox" [checked]="biodata().skills.includes(skill)" (change)="toggleSkill(skill)" />
+          {{ skill }}
+        </label>
+      </div>
+    </section>
+
+    <!-- Hobbies -->
+    <section class="section">
+      <h3>Hobbies</h3>
+      <div class="form-group">
+        <textarea [(ngModel)]="biodata().hobbies" name="hobbies" placeholder="Enter your hobbies" required></textarea>
+      </div>
+    </section>
+
+    <!-- Declaration -->
+    <section class="section">
+      <h3>Declaration</h3>
+      <div class="form-group">
+        <textarea [(ngModel)]="biodata().declaration" name="declaration" placeholder="Enter your declaration statement" required></textarea>
+      </div>
+    </section>
+
+    <button type="submit" class="submit-btn">Submit Biodata</button>
+  </form>
+</div>

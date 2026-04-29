@@ -1,0 +1,23 @@
+body{
+    font-family: Arial;
+}
+
+.container{
+    width: 600px;
+    margin: 30px auto;
+}
+
+input{
+    padding: 6px;
+    margin: 5px;
+}
+
+button{
+    padding: 6px 12px;
+    margin: 5px;
+}
+
+table{
+    margin-top: 15px;
+    width: 100%;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q4: Electricity Bill</title>
+</head>
+
+<body>
+    <h1>Question 4: Electricity Bill Calculator</h1>
+
+    <form name="billForm">
+        Monthly Units: <input type="number" name="units"><br><br>
+
+        <button type="button" onclick="calculateBill()">Calculate Total Bill</button><br><br>
+
+        Unit Amount: <input type="text" name="unitAmount" readonly><br><br>
+        Greenery Tax (5%): <input type="text" name="greeneryTax" readonly><br><br>
+        Education Tax (2%): <input type="text" name="eduTax" readonly><br><br>
+        Service Tax (1%): <input type="text" name="servTax" readonly><br><br>
+        Normal Tax (10%): <input type="text" name="normTax" readonly><br><br>
+
+        <strong>Total Bill: </strong> <input type="text" name="totalBill" readonly>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.playground {
+    display: flex;
+    gap: 30px;
+}
+
+.target-box {
+    width: 150px;
+    height: 150px;
+    background-color: #f39c12;
+    border: 2px solid #e67e22;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 150px;
+    font-weight: bold;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    background: #eee;
+    border: 1px solid #555;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+.doc {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px dashed #444;
+    background: #f9f9f9;
+}
+
+h4 {
+    margin-top: 0;
+}

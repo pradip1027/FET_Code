@@ -1,0 +1,77 @@
+<!-- ✅ PRACTICAL 1 Form + Age Calculation + Table using DOM (Already explained
+above, but rewriting in short exam format) 🎯 Aim: To create a form that accepts
+Name, Gender, DOB, Address and calculate age using 365 days assumption and
+display in table. ✅ Steps: Open VS Code Create file: practical1.html Paste this
+code: Html Copy code -->
+<!doctype html>
+<html>
+  <head>
+    <title>Student Form</title>
+  </head>
+  <body>
+    <h2>Student Form</h2>
+
+    <form id="form">
+      Name: <input type="text" id="name" required /><br /><br />
+
+      Gender:
+      <input type="radio" name="gender" value="Male" required /> Male
+      <input type="radio" name="gender" value="Female" /> Female <br /><br />
+
+      DOB: <input type="date" id="dob" required /><br /><br />
+
+      Address:
+      <textarea id="address"></textarea><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <br />
+
+    <table border="1" id="table">
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Address</th>
+        <th>Age</th>
+      </tr>
+    </table>
+
+    <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let gender = document.querySelector(
+          'input[name="gender"]:checked',
+        ).value;
+        let dob = document.getElementById("dob").value;
+        let address = document.getElementById("address").value;
+
+        let dobDate = new Date(dob);
+        let today = new Date();
+
+        let diff = today - dobDate;
+        let age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+
+        let table = document.getElementById("table");
+        let row = table.insertRow();
+
+        row.insertCell(0).innerHTML = name;
+        row.insertCell(1).innerHTML = gender;
+        row.insertCell(2).innerHTML = dob;
+        row.insertCell(3).innerHTML = address;
+        row.insertCell(4).innerHTML = age;
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 🎓 Viva Questions
+Q1: What is DOM?
+👉 Document Object Model used to access HTML elements.
+Q2: Why preventDefault() used?
+👉 To stop page refresh.
+Q3: Which DOM methods used?
+👉 getElementById(), querySelector(), insertRow(), insertCell() -->

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q6: Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="form-container">
+            <h1 class="title">Student Registration Form</h1>
+            <form id="regForm">
+                <div class="row full">
+                    <label>Student Name</label>
+                    <input type="text" id="studentName">
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Mobile No</label>
+                        <input type="text" id="mobileNo">
+                    </div>
+                    <div class="col">
+                        <label>Email Id</label>
+                        <input type="text" id="emailId">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Father Name</label>
+                        <input type="text" id="fatherName">
+                    </div>
+                    <div class="col">
+                        <label>Mother Name</label>
+                        <input type="text" id="motherName">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Select Course</label>
+                        <select id="course">
+                            <option value="">Select...</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="M.Tech">M.Tech</option>
+                            <option value="MBA">MBA</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Date Of Birth</label>
+                        <input type="date" id="dob">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <input type="radio" name="gender" value="Male"> Male
+                            <input type="radio" name="gender" value="Female"> Female
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Student Photo</label>
+                        <input type="file" id="photo">
+                    </div>
+                </div>
+
+                <div class="row full">
+                    <label>Select Branch</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="branch" value="CSE"> CSE
+                        <input type="checkbox" name="branch" value="IT"> IT
+                        <input type="checkbox" name="branch" value="ECE"> ECE
+                        <input type="checkbox" name="branch" value="Civil"> Civil
+                    </div>
+                </div>
+
+                <div class="row full">
+                    <label>Address</label>
+                    <textarea id="address" rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <div id="error-box" class="error-box"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

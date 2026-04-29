@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q5: Salary Calculation</title>
+</head>
+
+<body>
+    <h1>Question 5: Salary Calculation</h1>
+
+    <h3>Part 1: Console and Document Display</h3>
+    <button onclick="calcConsole()">Calculate fixed salary (Case: 60000)</button>
+    <div id="console-display"></div>
+
+    <hr>
+
+    <h3>Part 2: Interactive Form</h3>
+    <form id="salaryForm">
+        Basic Salary: <input type="number" id="basic"><br><br>
+        <button type="button" onclick="calcForm()">Calculate Salary Details</button><br><br>
+
+        DA: <input type="text" id="da" readonly><br><br>
+        HRA: <input type="text" id="hra" readonly><br><br>
+        GS: <input type="text" id="gs" readonly><br><br>
+        PF: <input type="text" id="pf" readonly><br><br>
+        <strong>Net Salary: </strong> <input type="text" id="net" readonly>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

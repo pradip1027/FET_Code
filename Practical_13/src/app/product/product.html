@@ -1,0 +1,43 @@
+<div class="product-detail-container" *ngIf="productDetails">
+  <div class="breadcrumb">
+    <a routerLink="/home">← Back to Courses</a>
+  </div>
+
+  <div class="product-hero">
+    <img [src]="productDetails.image" [alt]="productDetails.name" class="hero-image">
+  </div>
+
+  <div class="product-body">
+    <div class="main-info">
+      <h1>{{productDetails.name}}</h1>
+      <p class="tagline">{{productDetails.desc}}</p>
+      
+      <div class="details-section">
+        <h2>Course Overview</h2>
+        <p>{{productDetails.details}}</p>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="enroll-card">
+        <span class="price">{{productDetails.price}}</span>
+        <button class="btn-enroll">Enroll Now</button>
+        <ul class="features">
+          <li>✓ Full lifetime access</li>
+          <li>✓ Certificate of completion</li>
+          <li>✓ 30-Day Money-Back Guarantee</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="product-detail-container" *ngIf="!productDetails">
+  <div class="breadcrumb">
+    <a routerLink="/home">← Back to Courses</a>
+  </div>
+  <div class="not-found-msg">
+    <h2>Course Not Found</h2>
+    <p>The requested course (ID: {{productId}}) does not exist.</p>
+  </div>
+</div>

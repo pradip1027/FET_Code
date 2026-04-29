@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Variable Swapping</title>
+</head>
+
+<body>
+    <h1>Variable Swapping Methods</h1>
+
+    <h2>Sam's Method (Using Third Variable)</h2>
+    <p>Initial: x = 10, y = 20</p>
+    <p id="sam-output">Swapped: Click button to swap</p>
+
+    <h2>Emily's Method (Without Third Variable)</h2>
+    <p>Initial: a = 5, b = 8</p>
+    <p id="emily-output">Swapped: Click button to swap</p>
+
+    <hr>
+
+    <h1>Investment Growth (Question 2)</h1>
+
+    <h2>Charlie's Investment (Simple Interest)</h2>
+    <p>Principal: $2000, Rate: 4%, Time: 3 years</p>
+    <p id="charlie-output">Total Amount: Click button to calculate</p>
+
+    <h2>James's Investment (Compound Interest)</h2>
+    <p>Principal: $1500, Rate: 5%, Time: 4 years (Compounded Annually)</p>
+    <p id="james-output">Total Amount: Click button to calculate</p>
+
+    <button onclick="performSwap(); calculateInterest();">Perform Calculations (Q1 & Q2)</button>
+
+    <hr>
+
+    <h1>Temperature Conversion (Question 3)</h1>
+    <label for="fahrenheit">Enter temperature in Fahrenheit (America): </label>
+    <input type="number" id="fahrenheit" value="98">
+    <button onclick="convertTemperature()">Convert (F to C)</button>
+    <p id="temp-output">Result: </p>
+
+    <hr>
+
+    <h1>Area Calculations (Question 4)</h1>
+
+    <div>
+        <h3>Circle</h3>
+        <label>Radius: </label><input type="number" id="radius" value="5">
+        <p id="circle-output">Area: </p>
+    </div>
+
+    <div>
+        <h3>Rectangle (Playground)</h3>
+        <label>Width: </label><input type="number" id="width" value="10">
+        <label>Height: </label><input type="number" id="height" value="20">
+        <p id="rect-output">Area: </p>
+    </div>
+
+    <div>
+        <h3>Triangle (Garden)</h3>
+        <label>Base: </label><input type="number" id="base" value="10">
+        <label>Height: </label><input type="number" id="tri-height" value="15">
+        <p id="tri-output">Area: </p>
+    </div>
+
+    <button onclick="calculateAreas()">Calculate All Areas</button>
+
+</body>
+
+</html>
+<script src="script.js"></script>

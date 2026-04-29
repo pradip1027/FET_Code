@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-wrapper {
+    border: 5px solid red;
+    /* Large red border as seen in image */
+    padding: 10px;
+}
+
+.form-container {
+    width: 500px;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.row.full {
+    flex-direction: column;
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+    border: 1px solid #777;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 14px;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    align-items: center;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: darkred;
+}
+
+.error-box {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 1.5;
+}

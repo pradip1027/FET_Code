@@ -1,0 +1,59 @@
+<div class="app-container">
+  <!-- AUTHENTICATION VIEW -->
+  <div *ngIf="!isLoggedIn" class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>{{ isLoginMode ? 'Welcome Back!' : 'Create an Account' }}</h2>
+        <p>{{ isLoginMode ? 'Sign in to access courses.' : 'Sign up to start learning.' }}</p>
+      </div>
+
+      <div *ngIf="authError" class="auth-alert" [ngClass]="{'success': authError.includes('successful')}">
+        {{ authError }}
+      </div>
+
+      <form (ngSubmit)="onAuthSubmit()" #authForm="ngForm">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" name="username" [(ngModel)]="authData.username" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" [(ngModel)]="authData.password" required>
+        </div>
+        <button type="submit" class="btn-primary btn-block">
+          {{ isLoginMode ? 'Sign In' : 'Sign Up' }}
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <p *ngIf="isLoginMode">Don't have an account? <a href="javascript:void(0)" (click)="toggleMode()">Sign Up</a></p>
+        <p *ngIf="!isLoginMode">Already have an account? <a href="javascript:void(0)" (click)="toggleMode()">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP VIEW (Logged In) -->
+  <div *ngIf="isLoggedIn" class="main-layout">
+    <nav class="navbar">
+      <div class="nav-brand">EduTech Platform</div>
+      <ul class="nav-links">
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+        <li><a routerLink="/gallery" routerLinkActive="active">Gallery</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">Contact Us</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span class="welcome-text">Hi, {{authData.username}}</span>
+        <button class="btn-outline" (click)="logout()">Logout</button>
+      </div>
+    </nav>
+
+    <main class="content-area">
+      <router-outlet></router-outlet>
+    </main>
+    
+    <footer>
+      <p>&copy; 2026 EduTech SPA. All rights reserved.</p>
+    </footer>
+  </div>
+</div>

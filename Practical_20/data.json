@@ -1,0 +1,7 @@
+{
+  "students": [
+    { "name": "Pradip", "age": 20, "course": "Computer Engineering" },
+    { "name": "Aarav", "age": 21, "course": "Information Technology" },
+    { "name": "Priya", "age": 20, "course": "Electronics" }
+  ]
+}

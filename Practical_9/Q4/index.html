@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4: Web Form Operations</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- jQuery via CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="glass-panel text-center">
+            <h1>Practical 9: Question 4</h1>
+            <p>Mathematical Operations using Callback and setTimeout() separately</p>
+        </header>
+
+        <main>
+            <!-- A: Factorial -->
+            <section class="card glass-panel" id="factorial-section">
+                <h2>a) Factorial of a Number</h2>
+                <div class="input-group">
+                    <input type="number" id="num-fact" placeholder="Enter a positive integer">
+                </div>
+                <div class="btn-group">
+                    <button id="btn-fact-cb" class="btn primary">Solve via Callback</button>
+                    <button id="btn-fact-st" class="btn secondary">Solve via setTimeout</button>
+                </div>
+                <div class="result" id="res-fact">Result will appear here.</div>
+            </section>
+
+            <!-- B: Armstrong -->
+            <section class="card glass-panel" id="armstrong-section">
+                <h2>b) Armstrong Number Checker</h2>
+                <div class="input-group">
+                    <input type="number" id="num-arm" placeholder="Enter a number (e.g., 153)">
+                </div>
+                <div class="btn-group">
+                    <button id="btn-arm-cb" class="btn primary">Solve via Callback</button>
+                    <button id="btn-arm-st" class="btn secondary">Solve via setTimeout</button>
+                </div>
+                <div class="result" id="res-arm">Result will appear here.</div>
+            </section>
+
+            <!-- C: Palindrome -->
+            <section class="card glass-panel" id="palindrome-section">
+                <h2>c) Palindrome Number Checker</h2>
+                <div class="input-group">
+                    <input type="number" id="num-pal" placeholder="Enter a number">
+                </div>
+                <div class="btn-group">
+                    <button id="btn-pal-cb" class="btn primary">Solve via Callback</button>
+                    <button id="btn-pal-st" class="btn secondary">Solve via setTimeout</button>
+                </div>
+                <div class="result" id="res-pal">Result will appear here.</div>
+            </section>
+
+            <!-- D: Simple & Compound Interest -->
+            <section class="card glass-panel" id="interest-section">
+                <h2>d) Calculate Simple & Compound Interest</h2>
+                <div class="input-group multi">
+                    <input type="number" id="principal" placeholder="Principal (P)">
+                    <input type="number" id="rate" placeholder="Rate (R) %">
+                    <input type="number" id="time" placeholder="Time (T) in years">
+                </div>
+                <div class="btn-group">
+                    <button id="btn-int-cb" class="btn primary">Solve via Callback</button>
+                    <button id="btn-int-st" class="btn secondary">Solve via setTimeout</button>
+                </div>
+                <div class="result" id="res-int">Result will appear here.</div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script to execute logic -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Form</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      table {
+        border: 1px solid black;
+      }
+      table tr th {
+        border: 1px solid black;
+        padding: auto;
+      }
+
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Form</h1>
+    <form id="form">
+      <label for="name">Name :</label><br />
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <label for="gender">Gender :</label><br />
+      <input type="radio" name="gender" id="gender" value="Male" /> Male
+      <input type="radio" name="gender" id="gender" value="Female" /> Female
+      <br /><br />
+
+      <label for="dob">DOB :</label><br />
+      <input type="date" id="dob" name="dob" /><br /><br /><br />
+
+      <label for="name">Address :</label><br />
+      <textarea name="name" id="add" cols="30" rows="2"></textarea><br />
+      <br />
+
+      <button type="submit">Submit</button>
+      <br /><br />
+
+      <table id="table">
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Address</th>
+        </tr>
+      </table>
+    </form>
+  </body>
+  <script>
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+
+      let gender = document.querySelector('input[name="gender"]:checked').value;
+
+      let dob = document.getElementById("dob").value;
+      let add = document.getElementById("add").value;
+
+      let dobDate = new Date(dob);
+      let today = new Date();
+
+      let diff = today - dobDate;
+      let age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+
+      let table = document.getElementById("table");
+      let row = table.insertRow();
+
+      row.insertCell(0).innerHTML = name;
+      row.insertCell(1).innerHTML = gender;
+      row.insertCell(2).innerHTML = dob;
+      row.insertCell(3).innerHTML = add;
+    });
+  </script>
+</html>

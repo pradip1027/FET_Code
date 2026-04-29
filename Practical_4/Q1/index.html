@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q1: Student Information</title>
+    <style>
+        .output-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Question 1: Student Information</h1>
+    <form id="studentForm">
+        Roll No: <input type="text" id="rno"><br><br>
+        Name: <input type="text" id="name"><br><br>
+        Course: <input type="text" id="course"><br><br>
+        Fee: <input type="number" id="fee"><br><br>
+        Contact: <input type="text" id="contact"><br><br>
+
+        <button type="button" onclick="displayNamed()">Display (Named Function)</button>
+        <button type="button" id="arrowBtn">Display (Arrow Function)</button>
+        <button type="button" id="anonBtn">Display (Anonymous Function)</button>
+    </form>
+
+    <div id="output" class="output-box">
+        <h3>Record:</h3>
+        <p id="displayText"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

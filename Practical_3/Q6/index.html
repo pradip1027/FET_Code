@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q6: 3x3 Matrix Stats</title>
+    <style>
+        .matrix-input {
+            width: 40px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Question 6: 3x3 Matrix Stats</h1>
+    <p>Enter 9 numbers for the 3x3 matrix:</p>
+
+    <div id="matrix">
+        <div class="row">
+            <input type="number" class="matrix-input" value="1">
+            <input type="number" class="matrix-input" value="2">
+            <input type="number" class="matrix-input" value="3">
+        </div>
+        <div class="row">
+            <input type="number" class="matrix-input" value="4">
+            <input type="number" class="matrix-input" value="5">
+            <input type="number" class="matrix-input" value="6">
+        </div>
+        <div class="row">
+            <input type="number" class="matrix-input" value="7">
+            <input type="number" class="matrix-input" value="8">
+            <input type="number" class="matrix-input" value="9">
+        </div>
+    </div><br>
+
+    <button onclick="calculateMatrix()">Calculate</button>
+
+    <div id="output">
+        <h3>Results:</h3>
+        <p id="sum">Sum: </p>
+        <p id="avg">Average: </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

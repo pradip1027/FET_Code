@@ -1,0 +1,27 @@
+#cont{
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    grid-template-rows: 30px repeat(2, 200px);
+    background-color: aqua;
+    /* gap: ; */
+}
+
+div{
+    border: 1px solid black;
+}
+
+.child{
+    width: 50%;
+}
+
+.child img{
+    width: 100%;
+    height: 100%;
+}
+
+#category{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-content: center;
+}

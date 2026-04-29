@@ -1,0 +1,9 @@
+{
+  "name": "practical_20",
+  "version": "1.0.0",
+  "description": "Node.js and Express.js Practical",
+  "main": "q4.js",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

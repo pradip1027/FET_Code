@@ -1,0 +1,51 @@
+<div class="student-profile">
+  <h2>Student Profile</h2>
+
+  <!-- Interpolation -->
+  <div class="student-card">
+    <div class="student-image">
+      <img [src]="student().image" [alt]="student().name + ' image'" />
+    </div>
+    <div class="student-info">
+      <h3>{{ student().name }}</h3>
+      <p><strong>Student ID:</strong> {{ student().id }}</p>
+      <p><strong>Gender:</strong> {{ student().gender }}</p>
+      <p><strong>Date of Birth:</strong> {{ student().dateOfBirth }}</p>
+      <p><strong>Education:</strong> {{ student().education }}</p>
+      <p><strong>Course:</strong> {{ student().course }}</p>
+      <p><strong>Branch:</strong> {{ student().branch }}</p>
+      <p><strong>Fee:</strong> ${{ student().fee }}</p>
+    </div>
+  </div>
+
+  <!-- Two-Way Data Binding -->
+  <div class="edit-section">
+    <h3>Edit Student Information (Two-Way Binding)</h3>
+    <div class="form-group">
+      <label for="editName">Name:</label>
+      <input type="text" id="editName" [(ngModel)]="editableName" />
+      <button (click)="updateName()">Update Name</button>
+    </div>
+    <div class="form-group">
+      <label for="editFee">Fee:</label>
+      <input type="number" id="editFee" [(ngModel)]="editableFee" />
+      <button (click)="updateFee()">Update Fee</button>
+    </div>
+  </div>
+
+  <!-- Event Binding -->
+  <div class="actions">
+    <button (click)="resetToDefaults()" class="reset-btn">Reset to Defaults</button>
+  </div>
+
+  <!-- Property Binding -->
+  <div class="data-binding-demo">
+    <h3>Data Binding Demonstration</h3>
+    <ul>
+      <li><strong>Interpolation:</strong> Displaying data using double curly braces syntax</li>
+      <li><strong>Property Binding:</strong> Binding properties like [src] and [alt]</li>
+      <li><strong>Event Binding:</strong> Handling events with (click) syntax</li>
+      <li><strong>Two-Way Binding:</strong> Using [(ngModel)] for bidirectional data flow</li>
+    </ul>
+  </div>
+</div>

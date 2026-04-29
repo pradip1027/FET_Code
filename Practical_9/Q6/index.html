@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q6: Promises in DOM</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Promise Chaining Dashboard</h1>
+            <p>Using <code>then()</code>, <code>catch()</code>, and <code>finally()</code> methods</p>
+            <p class="subtitle">Check your Browser Console (F12) for detailed logs!</p>
+        </header>
+
+        <!-- A: Sum & Average -->
+        <section class="card glass-effect" id="section-a">
+            <div class="card-header">
+                <h2>A. Natural Numbers (1-10)</h2>
+            </div>
+            <div class="card-body">
+                <button id="btn-math" class="action-btn">Calculate Sum & Average</button>
+                <div id="output-math" class="output-box">Output will be displayed here...</div>
+            </div>
+        </section>
+
+        <!-- B: Salary Calculator -->
+        <section class="card glass-effect" id="section-b">
+            <div class="card-header">
+                <h2>B. Salary Calculator</h2>
+            </div>
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="number" id="base-salary" placeholder="Enter Base Salary (e.g. 50000)">
+                </div>
+                <button id="btn-salary" class="action-btn">Calculate Net & Gross</button>
+                <div id="output-salary" class="output-box">Gross/Net Salary output here...</div>
+            </div>
+        </section>
+
+        <!-- C: Book Info -->
+        <section class="card glass-effect" id="section-c">
+            <div class="card-header">
+                <h2>C. Book Information</h2>
+            </div>
+            <div class="card-body">
+                <div class="form-grid">
+                    <input type="text" id="book-id" placeholder="Book ID">
+                    <input type="text" id="book-name" placeholder="Book Name">
+                    <input type="text" id="book-author" placeholder="Author">
+                    <input type="text" id="book-publisher" placeholder="Publisher">
+                    <input type="number" id="book-price" placeholder="Price">
+                </div>
+                <button id="btn-book" class="action-btn">Process Book Info</button>
+                <div id="output-book" class="output-box">Book data will appear here...</div>
+            </div>
+        </section>
+        
+        <div id="doc-object-area"></div>
+    </div>
+
+    <!-- Script Execution -->
+    <script src="app.js"></script>
+</body>
+</html>

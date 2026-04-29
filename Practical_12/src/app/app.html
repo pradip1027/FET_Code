@@ -1,0 +1,210 @@
+<div class="app-container">
+  <header class="app-header">
+    <div class="header-content">
+      <h1>{{title}}</h1>
+      <p>Automated Salary & Leave Calculation System</p>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="card form-section">
+      <div class="section-header">
+        <h2>{{ isEditing ? 'Edit Employee Record' : 'Add New Employee' }}</h2>
+        <span class="badge" *ngIf="isEditing">Editing Mode</span>
+      </div>
+      
+      <form (ngSubmit)="onSubmit()" #payrollForm="ngForm">
+        
+        <fieldset class="form-group-fieldset">
+          <legend>Personal Information</legend>
+          <div class="grid-3">
+            <div class="input-group">
+              <label for="empId">Employee ID *</label>
+              <!-- Event Binding and Two-Way Binding -->
+              <input type="text" id="empId" name="empId" [(ngModel)]="currentEmployee.empId" (keyup)="onEmpIdChange()" required [disabled]="isEditing" placeholder="E.g. EMP001">
+            </div>
+            <div class="input-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" [(ngModel)]="currentEmployee.name" required placeholder="John Doe">
+            </div>
+            <div class="input-group">
+              <label for="fatherName">Father's Name</label>
+              <input type="text" id="fatherName" name="fatherName" [(ngModel)]="currentEmployee.fatherName">
+            </div>
+            <div class="input-group">
+              <label for="contactNumber">Contact Number</label>
+              <input type="tel" id="contactNumber" name="contactNumber" [(ngModel)]="currentEmployee.contactNumber">
+            </div>
+            <div class="input-group">
+              <label for="education">Education</label>
+              <input type="text" id="education" name="education" [(ngModel)]="currentEmployee.education">
+            </div>
+            <div class="input-group">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" [(ngModel)]="currentEmployee.address">
+            </div>
+            <div class="input-group radio-group">
+              <label>Gender</label>
+              <div class="radio-options">
+                <label><input type="radio" name="gender" value="Male" [(ngModel)]="currentEmployee.gender"> Male</label>
+                <label><input type="radio" name="gender" value="Female" [(ngModel)]="currentEmployee.gender"> Female</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group-fieldset">
+          <legend>Professional & Salary Information</legend>
+          <div class="grid-3">
+            <div class="input-group">
+              <label for="department">Department</label>
+              <select id="department" name="department" [(ngModel)]="currentEmployee.department">
+                <option value="">Select Department</option>
+                @for(dept of departments; track dept) {
+                  <option [value]="dept">{{dept}}</option>
+                }
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="designation">Designation</label>
+              <select id="designation" name="designation" [(ngModel)]="currentEmployee.designation">
+                <option value="">Select Designation</option>
+                @for(des of designations; track des) {
+                  <option [value]="des">{{des}}</option>
+                }
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="payScale">Pay Scale *</label>
+              <!-- Event Binding -->
+              <select id="payScale" name="payScale" [(ngModel)]="currentEmployee.payScale" (change)="calculateSalary()" required>
+                <option value="">Select Pay Scale</option>
+                <option value="1">Scale 1 (5,000 - 10,000)</option>
+                <option value="2">Scale 2 (10,001 - 20,000)</option>
+                <option value="3">Scale 3 (20,001 - 25,000)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="basicSalary">Basic Salary (Rs) *</label>
+              <input type="number" id="basicSalary" name="basicSalary" [(ngModel)]="currentEmployee.basicSalary" (keyup)="calculateSalary()" required>
+            </div>
+            <div class="input-group">
+              <label for="month">Salary Month</label>
+              <select id="month" name="month" [(ngModel)]="currentEmployee.month">
+                <option value="">Select Month</option>
+                @for(m of months; track m) {
+                  <option [value]="m">{{m}}</option>
+                }
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="absentDays">Absent Days</label>
+              <input type="number" id="absentDays" name="absentDays" [(ngModel)]="currentEmployee.absentDays" (keyup)="calculateSalary()" min="0" max="31">
+              <small>1 CL allowed per month. Extra leaves = LWP.</small>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Interpolation and Data Binding for Live Feedback -->
+        <fieldset class="form-group-fieldset live-preview-box">
+          <legend>Calculated Salary Breakdown</legend>
+          <div class="salary-grid">
+             <div class="salary-item">
+                <span class="label">Dearness Allowance (DA)</span>
+                <span class="value">{{currentEmployee.da | currency:'INR'}}</span>
+             </div>
+             <div class="salary-item">
+                <span class="label">House Rent Allowance (HRA)</span>
+                <span class="value">{{currentEmployee.hra | currency:'INR'}}</span>
+             </div>
+             <div class="salary-item">
+                <span class="label">Provident Fund (PF)</span>
+                <span class="value text-danger">- {{currentEmployee.pf | currency:'INR'}}</span>
+             </div>
+             <div class="salary-item">
+                <span class="label">Leave Deduction (LWP)</span>
+                <span class="value text-danger">- {{currentEmployee.leaveDeduction | currency:'INR'}}</span>
+             </div>
+             <div class="salary-item">
+                <span class="label">TDS (Tax Deducted at Source)</span>
+                <span class="value text-danger">- {{currentEmployee.tds | currency:'INR'}}</span>
+             </div>
+          </div>
+          <div class="salary-totals">
+            <div class="total-item">
+              <span>Gross Salary:</span>
+              <strong>{{currentEmployee.grossSalary | currency:'INR'}}</strong>
+            </div>
+            <div class="total-item highlight">
+              <span>Net Salary:</span>
+              <strong>{{currentEmployee.netSalary | currency:'INR'}}</strong>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" [disabled]="!payrollForm.form.valid || !currentEmployee.empId">
+            <span class="icon">✓</span> {{ isEditing ? 'Update Employee Record' : 'Save Employee Record' }}
+          </button>
+          <button type="button" class="btn btn-secondary" (click)="resetForm()">
+            <span class="icon">✕</span> Cancel
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Tabular Data Representation -->
+    <section class="card table-section">
+      <div class="table-toolbar">
+        <h2>Employee Directory</h2>
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" [(ngModel)]="searchQuery" placeholder="Search by ID, Name, Dept...">
+        </div>
+      </div>
+      
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Emp ID</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Scale</th>
+              <th>Basic</th>
+              <th>Gross Salary</th>
+              <th>Net Salary</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (emp of filteredRecords; track emp.empId) {
+            <tr>
+              <td><strong>{{emp.empId}}</strong></td>
+              <td>{{emp.name}}</td>
+              <td><span class="dept-badge">{{emp.department || 'N/A'}}</span></td>
+              <td>Scale {{emp.payScale}}</td>
+              <td>{{emp.basicSalary | currency:'INR'}}</td>
+              <td>{{emp.grossSalary | currency:'INR'}}</td>
+              <td class="net-salary-cell">{{emp.netSalary | currency:'INR'}}</td>
+              <td class="action-cells">
+                <button class="btn-icon edit" (click)="editRecord(emp)" title="Edit">✎</button>
+                <button class="btn-icon delete" (click)="deleteRecord(emp.empId)" title="Delete">🗑</button>
+              </td>
+            </tr>
+            } @empty {
+              <tr>
+                <td colspan="8" class="empty-state">
+                  <div class="empty-content">
+                    <h3>No Records Found</h3>
+                    <p>Submit the form above to add your first employee record.</p>
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.form-title {
+    background-color: #004d40;
+    color: white;
+    width: 600px;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-container {
+    background-color: white;
+    width: 600px;
+    padding: 0;
+    border: 3px solid #0288d1;
+}
+
+fieldset {
+    border: 1px solid #ffd54f;
+    margin: 10px;
+    padding: 15px;
+}
+
+legend {
+    color: #000;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.form-group label {
+    width: 150px;
+    font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    border: 1px solid #ffb300;
+    padding: 5px;
+    outline: none;
+}
+
+.radio-group {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.btn-submit {
+    background-color: #c8e6c9;
+    color: black;
+    border-bottom: 3px solid #81c784;
+}
+
+.btn-reset {
+    background-color: #ffcdd2;
+    color: black;
+    border-bottom: 3px solid #e57373;
+}
+
+.result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px dashed #0288d1;
+    width: 600px;
+}

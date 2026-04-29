@@ -1,0 +1,7 @@
+#container{
+    border: 2px solid black;
+    width: 30%;
+    height: 20%;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(10, 400px);
+}

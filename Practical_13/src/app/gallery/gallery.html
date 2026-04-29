@@ -1,0 +1,22 @@
+<div class="page-container">
+  <h1>Image Gallery</h1>
+  <p>Glimpses of our vibrant learning community and campus.</p>
+  
+  <div class="gallery-grid">
+    <img src="https://placehold.co/400x300/4f46e5/white?text=Campus" alt="Campus">
+    <img src="https://placehold.co/400x300/0ea5e9/white?text=Library" alt="Library">
+    <img src="https://placehold.co/400x300/10b981/white?text=Workshop" alt="Workshop">
+    <img src="https://placehold.co/400x300/f59e0b/white?text=Seminar" alt="Seminar">
+    <img src="https://placehold.co/400x300/ec4899/white?text=Hackathon" alt="Hackathon">
+    <img src="https://placehold.co/400x300/6366f1/white?text=Graduation" alt="Graduation">
+  </div>
+</div>
+
+<style>
+.page-container { max-width: 1200px; margin: 0 auto; }
+h1 { font-size: 2.5rem; color: #111827; margin-bottom: 0.5rem; }
+p { color: #6b7280; margin-bottom: 2rem; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.gallery-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.gallery-grid img:hover { transform: scale(1.05); }
+</style>

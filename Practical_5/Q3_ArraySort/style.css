@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    border: 1px solid #444;
+    padding: 20px;
+}
+
+.input-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-grid input {
+    width: 60px;
+    padding: 5px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 8px 16px;
+    margin-right: 10px;
+}
+
+.result {
+    font-weight: bold;
+    margin-top: 10px;
+}

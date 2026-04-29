@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q7: Matrix Arithmetic</title>
+    <style>
+        .matrix-grid {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .m-in {
+            width: 35px;
+            margin: 2px;
+            text-align: center;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .result-box {
+            margin-right: 30px;
+            margin-bottom: 20px;
+        }
+
+        .m-res {
+            display: inline-block;
+            width: 45px;
+            height: 25px;
+            border: 1px solid #ccc;
+            margin: 2px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Question 7: Matrix Arithmetic (3x3)</h1>
+
+    <div class="matrix-grid">
+        <h3>Matrix 1</h3>
+        <div id="m1">
+            <div class="row">
+                <input type="number" class="m-in m1-val" value="1"><input type="number" class="m-in m1-val"
+                    value="2"><input type="number" class="m-in m1-val" value="3">
+            </div>
+            <div class="row">
+                <input type="number" class="m-in m1-val" value="4"><input type="number" class="m-in m1-val"
+                    value="5"><input type="number" class="m-in m1-val" value="6">
+            </div>
+            <div class="row">
+                <input type="number" class="m-in m1-val" value="7"><input type="number" class="m-in m1-val"
+                    value="8"><input type="number" class="m-in m1-val" value="9">
+            </div>
+        </div>
+    </div>
+
+    <div class="matrix-grid">
+        <h3>Matrix 2</h3>
+        <div id="m2">
+            <div class="row">
+                <input type="number" class="m-in m2-val" value="9"><input type="number" class="m-in m2-val"
+                    value="8"><input type="number" class="m-in m2-val" value="7">
+            </div>
+            <div class="row">
+                <input type="number" class="m-in m2-val" value="6"><input type="number" class="m-in m2-val"
+                    value="5"><input type="number" class="m-in m2-val" value="4">
+            </div>
+            <div class="row">
+                <input type="number" class="m-in m2-val" value="3"><input type="number" class="m-in m2-val"
+                    value="2"><input type="number" class="m-in m2-val" value="1">
+            </div>
+        </div>
+    </div><br><br>
+
+    <button onclick="calculateAll()">Calculate Operations</button>
+
+    <div class="result-container">
+        <div class="result-box">
+            <h4>Addition</h4>
+            <div id="add-res"></div>
+        </div>
+        <div class="result-box">
+            <h4>Subtraction</h4>
+            <div id="sub-res"></div>
+        </div>
+        <div class="result-box">
+            <h4>Multiplication (Element-wise)</h4>
+            <div id="mul-res"></div>
+        </div>
+        <div class="result-box">
+            <h4>Division (Element-wise)</h4>
+            <div id="div-res"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

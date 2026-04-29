@@ -1,0 +1,70 @@
+<!-- ✅ PRACTICAL 2
+Accept 10 Numbers → Find Sum & Average
+(Using Normal Function, Arrow Function & Anonymous Function)
+🎯 Aim:
+To accept 10 numbers and calculate sum and average using different types of functions.
+✅ Steps:
+Create file: practical2.html
+Html
+Copy code -->
+<!doctype html>
+<html>
+  <head>
+    <title>Addition & Average</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+
+      for (let i = 0; i < 10; i++) {
+        let num = parseInt(prompt("Enter number " + (i + 1)));
+        numbers.push(num);
+      }
+
+      // Named Function
+      function calculateSum(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      }
+
+      let total = calculateSum(numbers);
+      let avg = total / 10;
+
+      document.write("Sum using Named Function: " + total + "<br>");
+      document.write("Average: " + avg + "<br>");
+
+      // Arrow Function
+      let arrowSum = (arr) => {
+        let s = 0;
+        for (let i of arr) {
+          s += i;
+        }
+        return s;
+      };
+
+      document.write("Sum using Arrow Function: " + arrowSum(numbers) + "<br>");
+
+      // Anonymous Function
+      let anon = function (arr) {
+        let s = 0;
+        for (let i of arr) {
+          s += i;
+        }
+        return s;
+      };
+
+      document.write("Sum using Anonymous Function: " + anon(numbers));
+    </script>
+  </body>
+</html>
+
+<!-- 🎓 Viva Questions
+Q1: What is arrow function?
+👉 Short syntax function introduced in ES6.
+Q2: Difference between named and anonymous function?
+👉 Named function has name, anonymous does not.
+Q3: Why parseInt() used?
+👉 To convert string input into number. -->
