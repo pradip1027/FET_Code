@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML,JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <form name="dmas">
+      <label for="num1">Number 1 ::</label>
+      <input
+        type="text"
+        name="num1"
+        id="num1"
+        placeholder="Enter no 1"
+        required
+      /><br /><br />
+
+      <label for="num2">Number 2 ::</label>
+      <input
+        type="text"
+        name="num2"
+        id="num2"
+        placeholder="Enter no 2"
+        required
+      /><br /><br />
+
+      <button type="button" onclick="add()">Addition</button>
+      <button type="button" onclick="sub()">Subtraction</button>
+      <button type="button" onclick="mul()">Multiplication</button>
+      <button type="button" onclick="div()">Division</button><br /><br />
+
+      <label for="result">Result::</label><br />
+      <input type="text" name="result" id="result" readonly /><br /><br />
+    </form>
+
+    <label for="arr">Array ::</label>
+    <br />
+    <input type="text" name="arr" id="arr" /><br /><br />
+    <button type="button" onclick="arraydemo()">ArrayDemo</button>
+
+    <br /><br />
+    <hr style="border: 2px solid black" />
+    <button type="button" onclick="arrayinit()">ArrayInit</button><br /><br />
+
+    <label for="arrinit">Array 14</label>
+    <input type="text" name="arrinit" id="arrinit" size="30px" /><br /><br />
+
+    <label for="arrinit2">Array 13</label>
+    <input type="text" name="arrinit2" id="arrinit2" size="30px" /><br /><br />
+
+    <!-- There are many ways of validation -->
+
+    <!-- 1. using a javascript function which has if else condition based check -->
+    <hr style="border: 2px solid black" />
+    <label for="arrinit2">Validation (If-Else)::</label><br /><br />
+    <input
+      type="text"
+      name="usrname"
+      id="usrname"
+      size="30px"
+      placeholder="Enter text"
+    /><br /><br />
+    <button type="button" onclick="validation()">Validate (If-Else)</button>
+    <br /><br /><br />
+
+    <!-- 2. Regex-based validation using javascript -->
+
+    <form onsubmit="return validregex();">
+      <label for="email">Validation (Regex-based):</label><br /><br />
+
+      <input
+        type="text"
+        name="email"
+        id="email"
+        size="30"
+        placeholder="Enter email"
+      />
+
+      <span id="error" style="color: red"></span><br /><br />
+
+      <button type="submit">Validate (Regex-based)</button>
+    </form>
+    <br /><br />
+
+    <!-- 3. HTML5 in-built validation method for form -->
+    <form action="">
+      <label for="mail">Validation (HTML in-built)::</label><br /><br />
+      <input
+        type="email"
+        name="mail"
+        id="mail"
+        placeholder="Enter Gmail ID"
+        required
+      />
+      <br /><br />
+      <button type="reset">reset</button>
+      <button type="submit">submit</button>
+    </form>
+
+    <hr style="border: 2px solid black" />
+    <button onclick="addElement()">Add Item</button>
+
+    <div id="container"></div>
+  </body>
+  <script src="script.js"></script>
+</html>
