@@ -1,0 +1,23 @@
+body {
+  height: 2000px; /* to allow scrolling */
+  font-family: Arial, sans-serif;
+}
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  display: none; /* hidden initially */
+  border-radius: 5px;
+}
+#scrollPos {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+}
